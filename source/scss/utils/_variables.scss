@@ -1,0 +1,149 @@
+
+//== Colors
+
+$base:                  #fff !default;
+$grayBase:              #373F42 !default;
+
+$gray:                  #6E7072 !default;
+$grayLight:             #E5E4E0 !default;
+$grayLighter:           #F0EFEA !default;
+$grayLightest:          #F7F7F7 !default;
+
+$brandPrimary:          #3B72E5 !default;
+$brandYellow:           #FFE24F !default;
+$brandGreen:            #80BA27 !default;
+$brandRed:              #F63A3A !default;
+
+$overlayColor:          rgba(0, 0, 0, 0.5) !default;
+$boxShadow:             0 4px 16px rgba(0, 0, 0, 0.16) !default;
+$boxShadow16:           0px 16px 16px rgba(51, 51, 51, 0.04), 0px 24px 32px rgba(51, 51, 51, 0.04) !default;
+$boxShadow20:           0px 20px 20px rgba(51, 51, 51, 0.08), 0px 32px 40px rgba(51, 51, 51, 0.04) !default;
+$boxShadow24:           0px 24px 24px rgba(51, 51, 51, 0.08), 0px 40px 48px rgba(51, 51, 51, 0.1) !default;
+$boxShadow28:           0px 28px 28px rgba(51, 51, 51, 0.08), 0px 48px 56px rgba(51, 51, 51, 0.12) !default;
+
+
+//== Reset
+
+$bodyBg:                $base !default;
+$textColor:             $grayBase !default;
+$linkColor:             $brandPrimary !default;
+
+$borderColor:           $gray !default;
+
+
+//== Typography
+
+$fontFamilyBase:        'Avenir', sans-serif !default;
+
+$fontSizeSmall:         12px !default;
+$fontSizeBase:          14px !default;
+$fontSizeLarge:         18px !default;
+
+$fontSize64:            64px !default;
+$fontSize56:            56px !default;
+$fontSize48:            48px !default;
+$fontSize40:            40px !default;
+$fontSize32:            32px !default;
+$fontSize28:            28px !default;
+$fontSize24:            24px !default;
+$fontSize21:            21px !default;
+$fontSize16:            16px !default;
+$fontSize10:            10px !default;
+
+$lineHeightBase:        1.5 !default;
+
+
+//== Media queries breakpoints
+
+$screen_min_375:        375px !default;
+$screen_min_414:        414px !default;
+$screen_min_480:        480px !default;
+$screen_min_600:        600px !default;
+$screen_min_640:        640px !default;
+$screen_min_768:        768px !default;
+$screen_min_854:        854px !default;
+$screen_min_960:        960px !default;
+$screen_min_1080:       1080px !default;
+$screen_min_1200:       1200px !default;
+$screen_min_1280:       1280px !default;
+$screen_min_1320:       1320px !default;
+$screen_min_1440:       1440px !default;
+$screen_min_1560:       1560px !default;
+$screen_min_1680:       1680px !default;
+$screen_min_1800:       1800px !default;
+$screen_min_1920:       1920px !default;
+
+//== Media queries breakpoints for forms
+
+$min-s:                 $screen_min_768;
+$min-m:                 $screen_min_1080;
+$min-l:                 $screen_min_1440;
+
+
+
+//== root
+
+:root {
+    //== Form templates
+    --formGridGap: 12px;
+    --formBorderRadius: 8px;
+    --formControlHeight: 40px;
+    --checkboxSize: 26px;
+    --formSectionDivider: 1;
+
+    //== Section templates
+    --sectionsGap: 24px;
+
+    //== Quantity templates
+    --quantityHeight: 32px;
+
+    //== Container templates
+    --container: 1660px;
+    --containerGutter: 30px;
+
+    //== Aside templates
+    --asideWidth: 290px;
+
+    //== Header templates
+    --mainHeaderHeight: 56px;
+    --secondaryHeaderHeight: 24px;
+
+    //== Sitemap templates
+    --gridSiteMap: 2;
+
+    //== Catalog grid
+    --catalogGrid: 2;
+
+    @media (min-width: $screen_min_640) {
+        //== Sitemap templates
+        --gridSiteMap: 3;
+
+        //== Catalog grid
+        --catalogGrid: 3;
+    }
+
+    @media (min-width: $screen_min_1080) {
+        //== Form templates
+        --formControlHeight: 56px;
+
+        //== Section templates
+        --sectionsGap: 40px;
+
+        //== Header templates
+        --mainHeaderHeight: 80px;
+
+        //== Sitemap templates
+        --gridSiteMap: 4;
+    }
+
+    @media (min-width: $screen_min_1320) {
+        //== Sitemap templates
+        --gridSiteMap: 5;
+
+        //== Catalog grid
+        --catalogGrid: 4;
+    }
+
+    --globalTopIndent: var(--mainHeaderHeight);
+    --globalRightIndent: 0;
+}

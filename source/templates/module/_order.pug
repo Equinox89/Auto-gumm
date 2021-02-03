@@ -1,0 +1,24 @@
+= '\n'
+//= Order =
+
+.order(class= prop.status class= idx === 2 ? 'active': '')
+    .order__info
+        a.order__info-number(href='javascript:void(0);')
+            +icon('icon-arrow')
+            span №995821745
+        .order__info-date date
+        .order__info-sum sum
+        .order__info-status= prop.content
+    .order__drop(style= idx === 2 ? 'display: block': '')
+        .order__item
+            // there're some orders
+        .order__delivery
+            span.order__delivery-choice Доставка (Самовывоз из Новой Почты)
+            span.order__delivery-price Бесплатно
+        .order__invoice
+            button(disabled= prop.status !== 'processing') Отменить заказ
+            span.order__invoice-sum Итого:
+                b 18 659 ₴
+
+//= End order =
+= '\n'

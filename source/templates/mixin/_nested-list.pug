@@ -1,0 +1,10 @@
+mixin nested-list(obj)
+    each item in obj
+        if 'list' in item
+            li
+                a(href='javascript:void(0);')= item.title
+                ul
+                    +nested-list(item.list)
+        else
+            li
+                a(href='javascript:void(0);')= item.title

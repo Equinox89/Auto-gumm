@@ -1,0 +1,43 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'sitemap'
+    ionRangeSlider = true
+
+    breadcrumbItems = [{name: 'Главная', link: 'index.html'}]
+
+doctype html
+html
+    include layout/_head
+
+    body.body
+
+        include layout/_header
+
+        = '\n'
+        //= Main =
+
+        main
+            = '\n'
+            //= Layout-box =
+
+            .layout-box.container#container
+                include module/_breadcrumb
+                h1 Sitemap
+
+                include module/_sitemap
+
+
+        //= End main =
+        = '\n'
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

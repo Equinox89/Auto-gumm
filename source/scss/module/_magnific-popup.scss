@@ -1,0 +1,105 @@
+.mfp-wrap {
+    .mfp {
+        &-container {
+            padding: 0 15px;
+            cursor: default;
+        }
+
+        &-content {
+            padding: 40px 0;
+
+            > * {
+                margin: 0 auto;
+            }
+        }
+
+        &-figure {
+            &:after {
+                display: none;
+            }
+        }
+
+        &-close {
+            color: $base;
+            left: auto;
+            padding: 0;
+            height: 50px;
+            width: 50px;
+            top: 20px;
+            right: 20px;
+            font-size: 0;
+            cursor: pointer !important;
+            background: $overlayColor;
+            border-radius: 50%;
+            position: fixed;
+
+            &:before,
+            &:after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: '';
+                width: 3px;
+                height: 24px;
+                border-radius: 4px;
+                background: $base;
+                transition: all .3s;
+            }
+
+            &:before {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            &:after {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+
+        &-arrow {
+            transform: translateY(-50%);
+            margin: 0;
+            width: 90px;
+            height: 90px;
+
+            &:before {
+                display: none;
+            }
+
+            &:after {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                border: none;
+                top: 0;
+                left: 0;
+                background: url('../images/icons/chevron-main.svg') center center no-repeat;
+                background-size: 55%;
+            }
+
+
+            &-left {
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &.mfp-gallery {
+        .mfp {
+            &-content {
+                padding: 0;
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        .mfp {
+            &-close {
+                top: 40px;
+                right: 40px;
+            }
+        }
+    }
+}

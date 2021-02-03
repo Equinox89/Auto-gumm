@@ -1,0 +1,44 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'details'
+    slickOnPage = true
+    breadcrumbItems = [
+        {name: 'Главная', link: 'index.html'},
+        {name: 'Каталог', link: 'catalog.html'}
+    ]
+
+doctype html
+html
+    include layout/_head
+
+    body.body
+        include layout/_header
+
+        = '\n'
+        //= Main =
+        main
+
+            = '\n'
+            //= Layout-box =
+
+            .layout-box.container#container
+                include module/_breadcrumb
+                include module/_details
+
+            //= End layout-box =
+            = '\n'
+
+        //= End main =
+        = '\n'
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

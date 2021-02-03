@@ -1,0 +1,106 @@
+.mobile-menu {
+    position: relative;
+
+    &__drop {
+        position: fixed;
+        top: var(--globalTopIndent);
+    }
+
+    &__actions {
+        position: relative;
+        width: 100%;
+
+        .button {
+            width: 100%;
+            min-height: 56px;
+            justify-content: flex-start;
+            padding: 0 16px;
+            font-weight: 600;
+
+            svg {
+                margin: 0 16px 0 0;
+                fill: $base;
+            }
+        }
+    }
+
+    &__back {
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        left: calc(var(--containerGutter) / 2);
+        border-radius: 8px;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        background: $brandPrimary;
+        opacity: 0;
+        visibility: hidden;
+
+        svg {
+            fill: transparent;
+            stroke: $base;
+            transform: rotate(-90deg);
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__nav {
+        transform: translate(0);
+    }
+
+    &__content {
+        flex-grow: 1;
+        position: relative;
+        overflow: hidden;
+        overflow-y: scroll;
+        display: grid;
+        align-content: start;
+        justify-items: start;
+        grid-gap: 56px;
+
+        .menu {
+            grid-auto-flow: unset;
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        position: fixed;
+        top: var(--globalTopIndent);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: var(--container);
+        z-index: 55;
+
+        &__drop {
+            top: 12px;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: $screen_min_1080 - 1) {
+        &__drop {
+            background: $bodyBg;
+            z-index: 55;
+            left: 0;
+            top: -100%;
+            width: 100%;
+            height: calc(100% - var(--globalTopIndent));
+            transition: top .3s ease-out;
+            display: grid;
+            align-content: start;
+            grid-template-rows: max-content 1fr;
+            grid-gap: 16px;
+            padding: 16px 0;
+        }
+
+        &__nav {
+            display: none;
+        }
+    }
+}

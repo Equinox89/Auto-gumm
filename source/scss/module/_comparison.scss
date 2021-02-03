@@ -1,0 +1,124 @@
+.comparison {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 24px;
+
+    .swiper {
+        &--corner-buttons {
+            margin: 0 0 24px;
+        }
+    }
+
+    &__list {
+        font-weight: 500;
+        font-size: $fontSizeBase;
+        line-height: 21px;
+        width: 100%;
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            padding: 0 8px;
+        }
+    }
+
+    &__top {
+        .swiper {
+            &--external-buttons {
+                .swiper {
+                    &-button {
+                        &-prev,
+                        &-next {
+                            top: -56px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        position: relative;
+
+        > ul {
+            li {
+                background: $borderColor;
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        grid-gap: 0;
+
+        > div {
+            display: grid;
+            grid-template-columns: var(--asideWidth) calc(100% - var(--asideWidth));
+        }
+
+        .swiper {
+            &--corner-buttons {
+                .swiper-container {
+                    padding: 56px 0 0;
+                    margin: -56px auto 0;
+                }
+            }
+        }
+
+        &__list {
+            li {
+                justify-content: flex-start;
+            }
+        }
+
+        &__bottom {
+            margin: 0;
+            z-index: 5;
+
+            > ul {
+                font-weight: 500;
+
+                li {
+                    &:nth-child(even) {
+                        background: $base;
+                    }
+                }
+            }
+        }
+
+        &__params {
+            width: 281px;
+        }
+    }
+
+    @media (max-width: $screen_min_1080 - 1) {
+        &__bottom {
+            > ul {
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-weight: bold;
+                border: 1px solid $borderColor;
+                border-top: none;
+
+                li {
+                    background: $borderColor;
+                    margin: 0 0 40px;
+                }
+            }
+
+            .swiper {
+                .comparison {
+                    &__list {
+                        li {
+                            margin: 40px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

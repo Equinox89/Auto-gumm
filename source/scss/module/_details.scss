@@ -1,0 +1,133 @@
+/*.details {
+    display: grid;
+    align-items: start;
+
+    > h1,
+    > h2,
+    > .title-h1,
+    > .title-h2 {
+        order: -1;
+        margin-top: 0;
+    }
+
+    &__image {
+        margin: 0 0 16px;
+
+        > img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        grid-gap: 0 16px;
+        grid-template-columns: 604px 1fr;
+        grid-template-rows: max-content 1fr;
+
+        &__image {
+            grid-row: 1 / -1;
+            margin: 0;
+        }
+    }
+}*/
+
+.details {
+    position: relative;
+
+    &__main {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 100%;
+        grid-gap: 16px 0;
+
+        > h1,
+        > .title-h1 {
+            margin: 0;
+            order: -1;
+        }
+    }
+
+    &__slider {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: 100%;
+    }
+
+    &__options {
+        display: grid;
+        grid-gap: 16px;
+        background: $borderColor; // need for presentation
+        min-height: 100vh; // need for presentation
+    }
+
+    &__inner {
+        position: relative;
+
+        > * {
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .tab-content {
+        display: grid;
+        grid-gap: 16px;
+        align-items: start;
+        grid-template-columns: 100%;
+
+        #default {
+            grid-column: 1 / -1;
+        }
+
+        .tab-box.active {
+            &:not(#default) {
+                ~ aside {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    aside {
+        display: none;
+    }
+
+    @media (min-width: $screen_min_1080) {
+        &__main {
+            grid-template-columns: 604px calc(100% - 604px);
+            grid-template-rows: max-content 1fr;
+        }
+
+        &__slider {
+            grid-row: 1 / -1;
+            grid-column: 1;
+            margin: 0 16px 0 0;
+            position: sticky;
+            top: calc(var(--globalTopIndent) + 15px);
+
+            ~ * {
+                grid-column: 2;
+            }
+        }
+
+        &__inner {
+            margin: 0 16px 0 0;
+            background: $borderColor;
+            min-height: 200vh; // need for presentation
+        }
+
+        .tab-content {
+            grid-gap: 0;
+            grid-template-columns: calc(100% - var(--asideWidth)) var(--asideWidth);
+        }
+
+        aside {
+            position: sticky;
+            top: calc(var(--globalTopIndent) + 15px);
+        }
+    }
+}

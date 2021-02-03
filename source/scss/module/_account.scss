@@ -1,0 +1,24 @@
+.account {
+    display: grid;
+    grid-gap: 80px;
+
+    &__title {
+        margin: 0 0 16px;
+        display: flex;
+
+        h1,
+        h2,
+        .title-h1,
+        .title-h2 {
+            margin: 0 auto 0 0;
+
+            + * {
+                margin: 0 0 0 16px;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+}

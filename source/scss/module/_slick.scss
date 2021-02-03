@@ -1,0 +1,35 @@
+.slick {
+    display: none;
+
+    &-initialized {
+        display: block;
+
+        .slick {
+            &-slide {
+                display: flex !important;
+            }
+        }
+    }
+
+    &-list {
+        height: 100%;
+    }
+
+    &-track {
+        height: 100%;
+    }
+
+    &-slide {
+        align-items: center;
+        justify-content: center;
+        outline: none;
+
+        img {
+            max-height: 100%;
+        }
+
+        &:nth-child(n+2) {
+            display: none;
+        }
+    }
+}

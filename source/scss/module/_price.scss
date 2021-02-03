@@ -1,0 +1,38 @@
+.price {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: default;
+
+    &__old {
+        font-size: $fontSize10;
+        line-height: 1;
+        display: flex;
+        align-items: flex-end;
+        color: $borderColor;
+        position: relative;
+        white-space: nowrap;
+        text-decoration: line-through;
+
+        span {
+            font-size: $fontSizeSmall;
+            line-height: 1;
+        }
+    }
+
+    &__default {
+        font-size: $fontSizeSmall;
+        line-height: 18px;
+        display: flex;
+        align-items: flex-end;
+        white-space: nowrap;
+        color: $grayBase;
+
+        span {
+            font-size: $fontSizeLarge;
+            line-height: 21px;
+            font-weight: bold;
+        }
+    }
+}

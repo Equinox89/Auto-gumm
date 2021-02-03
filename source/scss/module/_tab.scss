@@ -1,0 +1,58 @@
+.tab {
+    position: relative;
+
+    &-menu {
+        position: relative;
+        margin: 0 0 8px;
+    }
+
+    &-list {
+        position: relative;
+        display: grid;
+        justify-content: start;
+        grid-auto-flow: column;
+        grid-gap: 24px;
+        overflow: hidden;
+        overflow-x: scroll;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+
+    &-item {
+        position: relative;
+
+        &.active {
+            color: $brandPrimary;
+        }
+    }
+
+    &-link {
+        color: inherit;
+        white-space: nowrap;
+    }
+
+    &-content {
+        position: relative;
+    }
+
+    &-box {
+        display: none;
+
+        > * {
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}

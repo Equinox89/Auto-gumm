@@ -1,0 +1,27 @@
+/* Avenir Next Cyr */
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/regular/avenir.woff2') format('woff2'),
+    url('../fonts/avenir/regular/avenir.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/bold/avenir.woff2') format('woff2'),
+    url('../fonts/avenir/bold/avenir.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/medium/avenir.woff2') format('woff2'),
+    url('../fonts/avenir/medium/avenir.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}

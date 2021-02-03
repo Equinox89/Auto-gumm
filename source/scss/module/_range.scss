@@ -1,0 +1,100 @@
+.range {
+    position: relative;
+
+    &__slider {
+        position: relative;
+        padding: 10px 0;
+    }
+
+    &__controls {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        margin: 0 0 8px;
+        font-size: $fontSizeSmall;
+        line-height: 18px;
+
+        &-inner {
+            display: flex;
+            align-items: flex-end;
+            flex-grow: 1;
+        }
+
+        input {
+            position: relative;
+            margin-right: 9px;
+            width: 50%;
+            height: 32px;
+            text-align: center;
+            border: 1px solid $borderColor;
+            font-size: $fontSizeBase;
+            outline: none;
+            background: none;
+            -moz-appearance: textfield;
+            font-weight: 500;
+            box-sizing: border-box;
+            border-radius: 3px;
+            color: $gray;
+            padding: 0 6px;
+            transition: box-shadow .3s;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &:focus {
+                box-shadow: 0 2px 8px rgba(29, 29, 27, 0.08);
+            }
+        }
+
+        &-text {
+            position: relative;
+            margin: 0 11px;
+            color: $borderColor;
+            font-size: $fontSizeBase;
+        }
+
+        .button {
+            margin: 0 0 0 auto;
+            font-size: $fontSizeBase;
+            padding: 0 14px;
+            min-height: 32px;
+            flex-shrink: 0;
+            color: $base;
+        }
+    }
+
+    .irs {
+        height: 4px;
+
+        &-line {
+            height: 4px;
+            border-radius: 2px;
+            background: $borderColor;
+        }
+
+        &-bar {
+            top: 0;
+            height: 4px;
+            background: $brandPrimary;
+        }
+
+        &-slider {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            background: $borderColor;
+            position: absolute;
+            top: -10px;
+            box-shadow: 0 2px 6px rgba(29, 29, 27, 0.16);
+
+            &.from,
+            &.to {
+                cursor: pointer;
+            }
+        }
+    }
+}

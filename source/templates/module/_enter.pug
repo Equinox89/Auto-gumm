@@ -1,0 +1,25 @@
+= '\n'
+//= Enter =
+
+form.form.form--modal.form--enter.mfp-hide#enter(action='' method='')
+    .title-h2 Вход
+    .form__section
+        .form-group
+            label.control-label Телефон
+            input.form-control(type='text' placeholder='+ 380 __ __ __ ___')
+            .help-block
+        .form-group
+            label.control-label Пароль
+            input.form-control(type='password' placeholder='********')
+            .help-block
+    a.popup-modal(href='#recovery') Забыли пароль?
+
+    .form__buttons
+        .form-group
+            button.form-control.button.button--blue(type='submit') Вход
+    span У меня нет аккаунта&nbsp;
+        a.enter__registration.popup-modal(href='#registration') Регистрация
+
+
+//= End enter =
+= '\n'

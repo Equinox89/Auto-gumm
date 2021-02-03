@@ -1,0 +1,13 @@
+= '\n'
+//= Menu =
+
+ul.menu
+    each prop in menuList
+        li
+            a(href= prop.link)
+                if 'icon' in prop
+                    +icon('icon-grid')
+                = prop.name
+
+//= End menu =
+= '\n'

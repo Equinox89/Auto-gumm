@@ -1,0 +1,45 @@
+.button {
+    color: $base;
+    text-decoration: none;
+    background: $brandPrimary;
+    font-size: $fontSizeSmall;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid $brandPrimary;
+    outline: none;
+    padding: 0 24px;
+    min-height: 40px;
+    transition: all .2s ease;
+    white-space: nowrap;
+    border-radius: 3px;
+
+    &:disabled {
+        background: $borderColor;
+        border-color: $borderColor;
+        color: $borderColor;
+        cursor: default;
+
+        &:hover {
+            background: $borderColor;
+            box-shadow: none;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 2px 16px rgba(29, 29, 27, 0.16);
+    }
+
+    svg {
+        fill: transparent;
+    }
+}
+

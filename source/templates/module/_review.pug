@@ -1,0 +1,57 @@
+= '\n'
+//= Review =
+
+.review
+    .review__inner
+        .review__head
+            .review__head-name
+                span= prop.name
+                include _rating
+            span.review__head-date 28 сентября 2021
+                a.review__chain(href='javascript:void(0);')
+                    +icon('icon-chain')
+
+        .review__text.text
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        if(idx === 0)
+            include _form-photos
+
+        .review__actions
+            a.review__reply(href='javascript:void(0);')
+                span Ответить
+            .review__reaction
+                .review__reaction-item(class= idx === 0 ? 'active': '')
+                    a(href='javascript:void(0);')
+                        +icon('icon-like')
+                    span 134
+                .review__reaction-item
+                    a(href='javascript:void(0);')
+                        +icon('icon-dislike')
+                    span 25
+
+    if 'answer' in prop
+        .review__answer
+            .review__head
+                .review__head-name
+                    span Product manager
+                span.review__head-date 28 сентября 2021
+                    a.review__chain(href='javascript:void(0);')
+                        +icon('icon-chain')
+            .review__text
+                p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            .review__actions
+                .review__reaction
+                    .review__reaction-item
+                        a(href='javascript:void(0);')
+                            +icon('icon-like')
+                        span 134
+                    .review__reaction-item
+                        a(href='javascript:void(0);')
+                            +icon('icon-dislike')
+                        span 25
+
+
+
+//= End review =
+= '\n'

@@ -1,0 +1,10 @@
+= '\n'
+//= Category =
+
+.category
+    .category__list
+        each value, index in catalogListItems
+            button.category__item(class= index === 0 ? 'active' : '')= value
+
+//= End category =
+= '\n'

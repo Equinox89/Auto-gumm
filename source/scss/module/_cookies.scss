@@ -1,0 +1,58 @@
+.cookies {
+    padding: 16px;
+    position: fixed;
+    width: calc(100% - 30px);
+    max-width: 370px;
+    background: $base url('../images/icons/cookie.svg') calc(100% - 16px) calc(100% - 16px) no-repeat;
+    bottom: 24px;
+    right: 15px;
+    transition: all .6s;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 6px 24px rgba(29, 29, 27, 0.16);
+    border-radius: 8px;
+
+    b {
+        font-size: $fontSizeLarge;
+        line-height: 27px;
+        text-transform: uppercase;
+    }
+
+    p {
+        width: 100%;
+        padding-right: 114px;
+    }
+
+    .button {
+        text-transform: none;
+        padding: 0 32px;
+    }
+
+    &__close {
+        position: absolute;
+        display: flex;
+        right: 18px;
+        top: 18px;
+        cursor: pointer;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            stroke: $borderColor;
+        }
+    }
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    @media (min-width: $screen_min_768) {
+        padding: 24px;
+        bottom: auto;
+        top: 24px;
+        right: 24px;
+    }
+}

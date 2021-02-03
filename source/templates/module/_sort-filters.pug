@@ -1,0 +1,12 @@
+= '\n'
+//= Sort-filters =
+
+.sort-filters
+    .sort-filters__list
+        each value, index in sortFiltersItems
+            button.sort-filters__item(class= index === 0 ? 'reset': '')= value
+                if (index !== 0)
+                    +icon('icon-close')
+
+//= End sort-filters =
+= '\n'

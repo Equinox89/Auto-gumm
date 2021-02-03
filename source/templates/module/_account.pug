@@ -1,0 +1,164 @@
+= '\n'
+//= Account =
+
+.account
+    div
+        .account__title
+            h2 Личная информация
+        .account__content
+            form.form(action='' method='')
+
+                .form__title.title-h4 Личная информация
+                .form__section.col-min-s-3
+                    .form-group
+                        label.control-label Имя
+                        input.form-control(type='text' placeholder='Грег')
+                        .help-block
+                    .form-group
+                        label.control-label Имя
+                        input.form-control(type='text' placeholder='Корчун')
+                        .help-block
+                    .form-group.form-group--date
+                        label.control-label Отчество
+                        input.form-control(type='text' placeholder='Юхимович')
+                        .help-block
+                    .form-group
+                        label.control-label Дата рождения
+                        input.form-control(type='text' placeholder='20 августа 1996')
+                        .help-block
+                    .form-group
+                        label.control-label Пол
+                        select.form-control
+                            option(value='0') Мужской
+                            option(value='0') Женский
+                            option(value='0') Трансгендер
+                        .help-block
+                    .form-group
+                        label.control-label Язык
+                        select.form-control
+                            option(value='0') Не указан
+                            option(value='0') Руский
+                            option(value='0') Украинский
+                            option(value='0') Ангийский
+                        .help-block
+                .form__buttons.auto-flow
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Применить
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Отмена
+
+                .form__title.title-h4 Контакты
+                .form__section.col-min-s-3
+                    .form-group
+                        label.control-label Телефон
+                        input.form-control(type='text' placeholder='col-min-s-3')
+                        .help-block
+                    .form-group
+                        label.control-label Дополнительные телефоны
+                        input.form-control(type='text' placeholder='col-min-s-3')
+                        .help-block
+                    .form-group
+                        label.control-label Электронная почта
+                        input.form-control(type='text' placeholder='col-min-s-3')
+                        .help-block
+                .form__buttons.auto-flow
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Применить
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Отмена
+
+                .form__title.title-h4 Аутентификация
+                .form__section.col-min-s-3
+                    .form-group
+                        label.control-label Старий пароль
+                        input.form-control(type='text' placeholder='********')
+                        .help-block
+                    .form-group
+                        label.control-label Новый пароль
+                        input.form-control(type='text' placeholder='********')
+                        .help-block
+                    .form-group
+                        label.control-label Повторить пароль
+                        input.form-control(type='text' placeholder='********')
+                        .help-block
+                .form__buttons.auto-flow
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Применить
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Отмена
+
+    div
+        .account__title
+            h2 Подписка на рассылки
+        .account__content
+            form.form(action='' method='')
+                .form__checkboxes
+                    .form-group
+                        label
+                            input(type='checkbox' checked)
+                            | Я хочу получать рекомендации на основе моих предыдущих покупок
+                    .form-group
+                        label
+                            input(type='checkbox')
+                            | Я хочу получать уведомления SMS на мой телефон
+                    .form-group
+                        label
+                            input(type='checkbox')
+                            | Я хочу получать уведомления на мой Viber
+                    .form-group
+                        label
+                            input(type='checkbox')
+                            | Я хочу получать уведомления на мой email
+                .form__buttons.auto-flow
+                    .form-group
+                        button.form-control.button.button--blue(type='submit') Сохранить
+
+    div
+        .account__title
+            h2 Подписка на рассылки
+        .account__content
+            .layout-box__reviews
+                each prop, idx in reviewItems
+                    include _review
+
+    div
+        .account__title
+            h2 Списки желаний
+            a(href='javascript:void(0);') очистить список
+        .account__sort
+            include _category
+        .account__content
+            -
+                prefixInPrice = 'от&nbsp;'
+                currInPrice = '&nbsp;грн'
+                oldPrice = true
+
+            .layout-box__catalog
+                - for (let i = 0; i < 12; i++)
+                    include _product
+
+    div
+        .account__title
+            h2 Просмотренные товары
+        .account__sort
+            include _category
+        .account__content
+            -
+                prefixInPrice = 'от&nbsp;'
+                currInPrice = '&nbsp;грн'
+                oldPrice = true
+
+            .layout-box__catalog
+                - for (let i = 0; i < 12; i++)
+                    include _product
+
+    div
+        .account__title
+            h2 Мои заказы
+        .account__content
+            .layout-box__orders
+                each prop, idx in bookingItems
+                    include _order
+
+//= End account =
+= '\n'

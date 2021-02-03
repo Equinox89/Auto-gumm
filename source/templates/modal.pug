@@ -1,0 +1,48 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'modal'
+
+doctype html
+html
+    include layout/_head
+
+    body.body
+        include layout/_header
+
+        = '\n'
+        //= End main =
+        main
+
+            = '\n'
+            //= Layout-box =
+
+            .layout-box.layout-box--modals.container#container
+
+                a.popup-modal(href='#enter') #enter
+                a.popup-modal(href='#recovery') #recovery
+                a.popup-modal(href='#registration') #registration
+                a.popup-modal(href='#feedback') #feedback
+
+                include module/_enter
+                include module/_recovery
+                include module/_registration
+                include module/_feedback
+            //= End layout-box =
+            = '\n'
+
+
+        //= End main =
+        = '\n'
+
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

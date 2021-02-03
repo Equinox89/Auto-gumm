@@ -1,0 +1,22 @@
+= '\n'
+//= Mobile menu =
+
+- isMobileMenu = true
+
+.mobile-menu
+    #mobile-drop.mobile-menu__drop
+        .mobile-menu__actions.hide-screen-min-1080.container
+            a.mobile-menu__back(href='javascript:void(0);')
+                +icon('icon-arrow')
+            a.button.call-nav#call-nav(href='javascript:void(0);')
+                +icon('icon-grid')
+                | Каталог товаров
+        .mobile-menu__nav.container
+            include ../layout/_nav
+        .mobile-menu__content.container.hide-screen-min-1080
+            - menuList = menuListItems
+            include _menu
+            include _languages
+
+//= End mobile menu =
+= '\n'

@@ -1,0 +1,123 @@
+.text {
+    > * {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    img {
+        width: 100%;
+        margin: 1em 0;
+    }
+
+    &__inner {
+        width: 100%;
+        max-width: 716px;
+        margin: 0 auto;
+    }
+
+    ul {
+        position: relative;
+        margin: 1em 0;
+
+        > li {
+            position: relative;
+            display: table;
+
+            &:before {
+                display: table-cell;
+                position: relative;
+                padding: 0 4px 0 0;
+                font-weight: bold;
+                content: '· ';
+            }
+        }
+    }
+
+    ol {
+        counter-reset: num;
+        margin: 1em 0;
+
+        > li {
+            position: relative;
+            display: table;
+
+            &:before {
+                display: table-cell;
+                content: counters(num, ".") ". ";
+                counter-increment: num;
+                padding: 0 4px 0 0;
+            }
+        }
+    }
+
+    li {
+        margin: .3em 0;
+
+        p {
+            margin-top: .2em;
+        }
+    }
+
+    table {
+        font-size: $fontSizeBase;
+        margin: 1.5em 0;
+        border-collapse: collapse;
+
+        th,
+        td {
+            border: 1px solid $gray;
+            padding: 8px 16px;
+            text-align: center;
+            font-weight: normal;
+
+            img {
+                width: auto;
+            }
+
+            &:first-child {
+                text-align: left;
+            }
+        }
+
+        td {
+            color: $textColor;
+
+            &:first-child {
+                color: $grayBase;
+            }
+        }
+    }
+
+    blockquote {
+        padding: 16px 0 16px 48px;
+        background: $gray;
+        margin: 2em 0;
+        border-radius: 8px;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 32px;
+            height: 28px;
+            left: 8px;
+            top: 8px;
+            background: url(../images/icons/quotes.svg) no-repeat;
+        }
+    }
+
+    @media (min-width: $screen_min_768) {
+        blockquote {
+            padding: 24px 0 24px 60px;
+        }
+    }
+}

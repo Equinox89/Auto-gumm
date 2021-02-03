@@ -1,0 +1,27 @@
+mixin nav-menu(obj)
+    each prop, idx in obj
+        if prop.list
+            li.nav__item.has-children(class= ('class' in prop) ? 'active': '')
+                a.nav__link(href='catalog.html')
+                    if 'main' in prop
+                        img(src=`data/icons/${ prop.icon }.svg`, alt='')
+                    != prop.title
+                a.nav__button(href='javascript:void(0);')
+                    +icon('icon-slider-arrow')
+                ul.nav__inner(class= ('columns' in prop) ? `col-${ prop.columns }`: false)
+                    each el, i in prop.list
+                        li
+                            span.nav__category= el.title
+                            ul.nav__list
+                                each value, j in el.inner
+                                    li(class= i === 0 && j === 0 ? 'active': '')
+                                        a(href='catalog.html')= value
+
+        else
+            li.nav__item(class= ('class' in prop) ? 'active': '')
+                a.nav__link(href='catalog.html')
+                    if 'main' in prop
+                        img(src=`data/icons/${ prop.icon }.svg`, alt='')
+                    != prop.title
+
+

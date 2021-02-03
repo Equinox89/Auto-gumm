@@ -1,0 +1,25 @@
+.scroller {
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-color: $brandPrimary;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 0;
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $brandPrimary;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: transparent;
+    }
+}

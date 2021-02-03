@@ -1,0 +1,58 @@
+.section {
+    position: relative;
+    margin: 0 0 var(--sectionsGap);
+
+    &__title {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        margin: 0 0 12px;
+
+        .button {
+            margin: 0 0 0 auto;
+            min-height: 32px;
+            font-size: $fontSize10;
+            padding: 0 12px;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0 16px 0 0;
+        }
+    }
+
+    > * {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: $screen_min_768) {
+        &__title {
+            .button {
+                min-height: 40px;
+                font-size: $fontSizeSmall;
+                padding: 0 24px;
+            }
+
+            h1,
+            h2 {
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        &__title {
+            align-items: flex-end;
+        }
+    }
+}

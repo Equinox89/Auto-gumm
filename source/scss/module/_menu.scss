@@ -1,0 +1,24 @@
+.menu {
+    position: relative;
+    display: grid;
+    grid-gap: 32px;
+    grid-auto-flow: column;
+    justify-items: start;
+    font-size: $fontSizeSmall;
+    line-height: 18px;
+
+    li {
+        position: relative;
+    }
+
+    a {
+        position: relative;
+        color: $grayBase;
+        font-weight: 500;
+        text-decoration: none;
+        display: grid;
+        grid-gap: 8px;
+        align-items: center;
+        grid-template-columns: max-content 1fr;
+    }
+}

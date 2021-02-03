@@ -1,0 +1,89 @@
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $fontSize16;
+    font-weight: bold;
+    width: 100%;
+
+    li {
+        display: flex;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 3px;
+        overflow: hidden;
+
+        &:nth-last-child(n+2) {
+            margin: 0 8px 0 0;
+        }
+
+        a,
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            text-decoration: none;
+            color: $gray;
+            background: transparent;
+            transition: background .2s, color .1s;
+            width: 100%;
+        }
+
+        &:hover,
+        &.active {
+            a {
+                color: $base;
+                background: $brandPrimary;
+            }
+        }
+
+        &.prev,
+        &.next {
+            font-size: 0;
+
+            svg {
+                fill: transparent;
+            }
+
+            &.disabled {
+                opacity: .4;
+
+                svg {
+                    stroke: $borderColor;
+                }
+            }
+
+            &:hover {
+                a {
+                    background: transparent;
+                }
+            }
+        }
+
+        &.prev {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        li {
+            &.prev,
+            &.next {
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            &:nth-last-child(n+2) {
+                margin: 0 16px 0 0;
+            }
+        }
+    }
+}

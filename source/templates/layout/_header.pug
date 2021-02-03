@@ -1,0 +1,27 @@
+= '\n'
+//= Header =
+
+header.header#header
+    .header__top
+        .container
+            - menuList = menuListItems
+            include ../module/_menu
+            include ../module/_languages
+            -
+                hideOnMobile = true
+                mediaQuery = '1080'
+            include ../module/_user
+    .header__bottom.container
+        include ../module/_mobile-menu-btn
+        include ../module/_logo
+        a.button.call-aside.hide-screen-max-1080(
+            href='javascript:void(0);'
+            data-trigger= 'nav-desktop')
+            +icon('icon-grid')
+            | Каталог товаров
+        - searchPlaceholder = 'Ищи тут...'
+        include ../module/_search
+        include ../module/_search-button
+
+//= End header =
+= '\n'

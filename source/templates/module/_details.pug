@@ -1,0 +1,127 @@
+= '\n'
+//= Details simple =
+
+//.details
+    .details__image
+        img(src=`https://fakeimg.pl/604x535/`, alt='')
+    h1 Awesome product
+    .details__info
+        .text
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+
+//= End details simple =
+= '\n'
+
+
+= '\n'
+//= Details full =
+
+.details
+    .details__tab.tab
+        .tab-menu
+            ul.tab-list
+                each prop, idx in detailsTabMenu
+                    li.tab-item(class= idx === 0 ? 'active': '')
+                        a.tab-link(href=`#${ prop.id }`)= prop.name
+        .tab-content
+            #default.tab-box.active
+                .details__main.section
+                    .details__slider#details
+                        .details__slider-master.gallery-popup.slick#master
+                            - for (let i = 0; i < 10; i++)
+                                a.slick-slide(href=`https://fakeimg.pl/604x535/`)
+                                    img(src=`https://fakeimg.pl/604x535/`, alt='')
+
+                        .details__slider-slave.slick#slave
+                            - for (let i = 0; i < 10; i++)
+                                img.slick-slide(src=`https://fakeimg.pl/60x60/`, alt='')
+                    h1 Some awesome product
+                    .details__options
+                        p this block for presentation how it could be
+
+                section.section
+                    .swiper.swiper--corner-buttons
+                        .swiper-container(data-params='products')
+                            .swiper-button-prev.hide-screen-max-1080
+                                +icon('icon-slider-arrow')
+                            .swiper-button-next.hide-screen-max-1080
+                                +icon('icon-slider-arrow')
+                            .section__title
+                                h2 Аксессуары
+                                a.button(href='javascript:void(0);') Показать все
+                            -
+                                oldPrice = true
+                            .swiper-wrapper
+                                - for (let i = 0; i < 15; i++)
+                                    .swiper-slide
+                                        include _product
+                            .swiper-scrollbar.hide-screen-min-1080
+
+                section.section
+                    .swiper.swiper--corner-buttons
+                        .swiper-container(data-params='products')
+                            .swiper-button-prev.hide-screen-max-1080
+                                +icon('icon-slider-arrow')
+                            .swiper-button-next.hide-screen-max-1080
+                                +icon('icon-slider-arrow')
+                            .section__title
+                                h2 Похожие товары
+                                a.button(href='javascript:void(0);') Показать все
+                            -
+                                oldPrice = true
+                            .swiper-wrapper
+                                - for (let i = 0; i < 15; i++)
+                                    .swiper-slide
+                                        include _product
+                            .swiper-scrollbar.hide-screen-min-1080
+
+            #tab-1.tab-box
+                .details__inner
+                    .title-h1 tab-1
+                    span this block for presentation how it could be
+                    section.section
+                        .swiper.swiper--corner-buttons
+                            .swiper-container(data-params='products')
+                                .swiper-button-prev.hide-screen-max-1080
+                                    +icon('icon-slider-arrow')
+                                .swiper-button-next.hide-screen-max-1080
+                                    +icon('icon-slider-arrow')
+                                .section__title
+                                    h2 Похожие товары
+                                    a.button(href='javascript:void(0);') Показать все
+                                -
+                                    oldPrice = true
+                                .swiper-wrapper
+                                    - for (let i = 0; i < 15; i++)
+                                        .swiper-slide
+                                            include _product
+                                .swiper-scrollbar.hide-screen-min-1080
+            #tab-2.tab-box
+                .details__inner
+                    .title-h1 tab-2
+                    span this block for presentation how it could be
+            #tab-3.tab-box
+                .details__inner
+                    .title-h1 tab-3
+                    span this block for presentation how it could be
+            #tab-4.tab-box
+                .details__inner
+                    .title-h1 tab-4
+                    span this block for presentation how it could be
+            #tab-5.tab-box
+                .details__inner
+                    .title-h1 tab-5
+                    span this block for presentation how it could be
+            #tab-6.tab-box
+                .details__inner
+                    .title-h1 tab-6
+                    span this block for presentation how it could be
+            aside
+                |aside
+
+
+//= End details full =
+= '\n'

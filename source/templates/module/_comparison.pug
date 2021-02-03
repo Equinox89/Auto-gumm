@@ -1,0 +1,50 @@
+= '\n'
+//= Comparison =
+
+.comparison
+    .comparison__top
+        span 123
+        .swiper.swiper--corner-buttons
+            .swiper-case
+                .swiper-container.fake-overflow(data-params='comparison' data-master=true)
+                    - oldPrice = true
+                    .swiper-wrapper
+                        - for (let i = 0; i < 6; i++)
+                            .swiper-slide
+                                span 123
+                    .swiper-button-prev.hide-screen-max-1080
+                        +icon('icon-slider-arrow')
+                    .swiper-button-next.hide-screen-max-1080
+                        +icon('icon-slider-arrow')
+    .comparison__bottom
+        ul.comparison__list
+            li category-0
+            li category-1
+            li category-2
+            li category-3
+            li category-4
+            li category-5
+            li category-6
+            li category-7
+            li category-8
+        .swiper
+            .swiper-container(data-params='comparisonList' data-slave=true)
+                - oldPrice = true
+
+                .swiper-wrapper
+                    - for (let i = 0; i < 6; i++)
+                        .swiper-slide
+                            ul.comparison__list
+                                li value-0
+                                li value-1
+                                li value-2
+                                li value-3
+                                li value-4
+                                li value-5
+                                li value-6
+                                li value-7
+                                li value-8
+
+
+//= End comparison =
+= '\n'

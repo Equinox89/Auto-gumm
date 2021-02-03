@@ -1,0 +1,133 @@
+.review {
+    position: relative;
+    display: grid;
+    grid-gap: 4px;
+
+    .form-photos {
+        margin-top: 8px;
+    }
+
+    &__inner {
+        border: 1px solid $borderColor;
+        border-radius: 8px;
+        padding: 16px;
+
+        .form {
+            display: none;
+        }
+    }
+
+    &__answer {
+        border: 1px solid $borderColor;
+        border-radius: 8px;
+        margin: 0 0 0 8px;
+        padding: 16px;
+    }
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        &-name {
+            font-weight: bold;
+            margin: 0 auto 0 0;
+            padding: 0 16px 0 0;
+
+            > span {
+                display: block;
+                margin: 0 0 4px;
+                grid-column: 2 / -1;
+            }
+
+            .rating {
+                margin: 0 0 4px;
+                grid-column: 2 / -1;
+            }
+        }
+
+        &-date {
+            color: $gray;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__chain {
+        display: flex;
+        margin: 0 0 0 8px;
+    }
+
+    &__text {
+        position: relative;
+        margin: 4px 0 0;
+
+        .form-photos {
+            margin-bottom: 12px;
+        }
+
+        > * {
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__actions {
+        margin: 16px 0 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    &__reply {
+        position: relative;
+        color: $brandPrimary;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        margin: 0 16px 0 0;
+
+        svg {
+            margin: 0 8px 0 0;
+        }
+    }
+
+    &__reaction {
+        display: grid;
+        grid-auto-flow: column;
+        margin: 0 0 0 auto;
+        grid-gap: 12px;
+
+        &-item {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            grid-gap: 8px;
+            color: $brandPrimary;
+
+            a {
+                display: flex;
+            }
+
+            &.active {
+                color: $gray;
+
+                svg {
+                    fill: $gray;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_768) {
+        &__answer {
+            margin: 0 0 0 24px;
+        }
+    }
+}

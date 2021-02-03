@@ -1,0 +1,28 @@
+.search-button {
+    position: relative;
+    display: flex;
+    margin: 0 0 0 auto;
+
+    .call-aside {
+        display: flex;
+    }
+
+    .close-aside {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        visibility: hidden;
+
+        svg {
+            stroke: $gray;
+        }
+    }
+
+    .icon-search {
+        fill: transparent;
+        transition-duration: .1s;
+    }
+}

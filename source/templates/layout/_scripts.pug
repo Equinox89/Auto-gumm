@@ -1,0 +1,44 @@
+= '\n'
+//= Scripts =
+script(src=bowerDir + 'jquery/dist/jquery.min.js')
+
+script(src=bowerDir + 'swiper/dist/js/swiper.js')
+script(src=bowerDir + 'stacktable/stacktable.js')
+script(src=bowerDir + 'jquery-menu-aim/jquery.menu-aim.js')
+script(src=bowerDir + 'magnific-popup/dist/jquery.magnific-popup.js')
+
+if(select2OnPage)
+    script(src=bowerDir + 'select2/dist/js/select2.full.min.js')
+
+if (ionRangeSlider)
+    script(src=bowerDir + 'ion.rangeslider/js/ion.rangeSlider.js')
+
+if(slickOnPage)
+    script(src=bowerDir + 'slick-carousel/slick/slick.min.js')
+
+script(src='js/main' + minSuffix + '.js')
+
+if(select2OnPage)
+    script.
+        $(document).ready(function () {
+            $('select.form-control').select2({
+                minimumResultsForSearch: -1
+            });
+        });
+
+if (ionRangeSlider)
+    script.
+        $(document).ready(function() {
+
+            $('.range__slider input').ionRangeSlider({
+                type: 'double',
+                min: 0,
+                max: 20000,
+                drag_interval: true,
+                hide_min_max: true,
+                hide_from_to: true
+            });
+        });
+
+//= End scripts =
+= '\n'

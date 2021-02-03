@@ -1,0 +1,29 @@
+.up {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    width: 48px;
+    height: 48px;
+    transition: bottom .3s;
+    background: $base;
+    border-radius: 50%;
+    border: 1px solid $brandPrimary;
+
+    &.absolute {
+        position: absolute;
+        top: -24px;
+    }
+
+    svg {
+        fill: transparent;
+        stroke: $brandPrimary;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 24px;
+        height: 24px;
+    }
+}

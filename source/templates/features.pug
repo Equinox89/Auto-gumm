@@ -1,0 +1,54 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'features'
+
+doctype html
+html
+    include layout/_head
+
+    body.body.body--features
+
+        include layout/_header
+
+        = '\n'
+        //= main =
+
+        main
+            .layout-box#container.container
+                section.section
+                    .title-h2 Rating
+                    include module/_rating
+
+                section.section
+                    .title-h2 Rating with link
+                    - reviewsInRating = true
+                    include module/_rating
+
+                section.section
+                    .title-h2 Quantity
+                    include module/_quantity
+
+                section.section
+                    .title-h2 Video example
+                    include module/_video
+
+                section.section
+
+                section.section
+
+
+            //= End main =
+            = '\n'
+
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

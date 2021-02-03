@@ -1,0 +1,109 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'main'
+    main = true
+
+doctype html
+html
+    include layout/_head
+
+    body.body.body--main
+
+        include layout/_header
+
+        = '\n'
+        //= main =
+
+        main
+            #container.container
+                section.section
+                    .swiper.swiper--special-buttons
+                        .swiper-container.swiper-container-entire(data-params='firstScreen')
+                            .swiper-wrapper
+                                - for (let i = 0; i < 15; i++)
+                                    .swiper-slide
+                                        a(href='catalog.html')
+                                            img(src=`https://fakeimg.pl/1366x560/?text=First-Screen`, alt='')
+                            .swiper-button-prev.hide-screen-max-1080
+                                img(src=`data/icons/first-screen-arrow.svg`, alt='')
+                            .swiper-button-next.hide-screen-max-1080
+                                img(src=`data/icons/first-screen-arrow.svg`, alt='')
+
+
+                section.section
+                    .swiper.swiper--special-buttons.swiper--outside-buttons.fake-overflow
+                        .swiper-case.stretch
+                            .swiper-container(data-params='products')
+                                .swiper-button-prev.hide-screen-max-1080
+                                    +icon('icon-slider-arrow')
+                                .swiper-button-next.hide-screen-max-1080
+                                    +icon('icon-slider-arrow')
+                                .section__title
+                                    h2 Swiper with outside-buttons
+                                    a.button(href='javascript:void(0);') Показать все
+                                -
+                                    oldPrice = true
+                                .swiper-wrapper
+                                    - for (let i = 0; i < 14; i++)
+                                        .swiper-slide
+                                            include module/_product
+                                .swiper-scrollbar.hide-screen-min-1080
+
+                section.section
+                    .swiper.swiper--corner-buttons
+                        .swiper-container(data-params='products')
+                            .swiper-button-prev.hide-screen-max-1080
+                                +icon('icon-slider-arrow')
+                            .swiper-button-next.hide-screen-max-1080
+                                +icon('icon-slider-arrow')
+                            .section__title
+                                h2 Swiper with corner-buttons and scrollbar only on mobile
+                                a.button(href='javascript:void(0);') Показать все
+                            -
+                                oldPrice = true
+                            .swiper-wrapper
+                                - for (let i = 0; i < 15; i++)
+                                    .swiper-slide
+                                        include module/_product
+                            .swiper-scrollbar.hide-screen-min-1080
+
+
+            //= End main =
+            = '\n'
+
+            = '\n'
+            //= Content =
+            .content.container
+                .text
+                    h1 Интернет-магазин автомобильных ковриков AVTO-Gumm
+                    p Каждый владелец автомобиля знает, что салон обязательно нуждается в защите. Автоковрик — аксессуар, который поможет с решением этой задачи. Автомобильные коврики в салон выполняют несколько важных функций. Прежде всего они защищают дно от различных загрязнений любого типа, уличной грязи с обуви и дорожной пыли, а также препятствуют воздействию влаги на оригинальную обивку. Именно коврик помогает не допустить неприятного явления, как коррозия и грибковые поражения, особенно если он изготовлен из резины.
+                    h2 Автомобильные коврики от производителя
+                    p Автоковрики не только защищают салон от загрязнения, но и значительно упрощают процесс уборки. Загрязнения, попавшие на резиновый коврик, легко отмываются даже обычной водой, при этом дно автомобиля и обивка остаются чистыми, и не нужно проводить сложную очистку. Поэтому ухаживать за машиной становится очень просто, также ковры помогают улучшить общий внешний вид благодаря большому количеству расцветок.Водонепроницаемость и гибкость, стойкость к повреждениям и прочность — главные свойства ковриков от производителя. Они отлично подходят машине по размеру, не скользят и надежно защищают от грязи.
+                    h2 Какой коврик купить в машину
+                    p И хотя автоковрики — очень простые аксессуары, к их выбору стоит подходить тщательно, учитывая какую важную роль они играют. И не только в салоне, коврики в багажник тоже необходимы для полноценной защиты. Главное — они должны подходить по размеру. Для этого производитель изготавливает уникальные аксессуары для разных марок автомобилей. Такие коврики называются модельными и они идеально соответствуют любому авто.Другим важным параметром для автоковрика является водонепроницаемое свойство материала, из которого он изготовлен. Благодаря этому влага не попадает на пол, поэтому не может образоваться ржавчина или коррозия, не возникает грибок. Выбрать можно из таких вариантов:
+
+                    ul
+                        li Резиновые Автоковрики (Полиуретановые)
+                        li Текстильные Автоковрики (Ворсовые)
+                        li Гибридные Автоковрики
+
+                    p Резиновые и полиуретановые — самые популярные, изготовленные по собственной формуле производителя они гарантируют качественную защиту в салоне и багажнике. Они очень просты в чистке, достаточно просто вытрусить, протереть влажной тряпкой или промыть водой, это зависит от сложности загрязнения.
+                    h2 Купить по низкой цене в магазине AVTO-Gumm
+
+                    p Наш интернет-магазин AVTO-Gumm предлагает качественные полиуретановые и резиновые автомобильные коврики по низкой цене. Они прочные и долговечные, устойчивы к истираниям, водонепроницаемые, не пропускают грязь и пыль, легко отмываются и прочно фиксируются на одном месте. Автоковрики — надежная защита салона, и у нас предложены товары для автомобилей любой марки, найдется аксессуар нужного размера и цвета.
+
+            //= End content =
+            = '\n'
+
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

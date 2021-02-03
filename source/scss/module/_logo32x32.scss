@@ -1,0 +1,48 @@
+.logo32x32 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__link {
+        display: flex;
+
+        svg {
+            fill: $brandPrimary;
+        }
+    }
+
+    &__text {
+        line-height: 1.2;
+        text-align: left !important;
+        white-space: nowrap;
+        color: $grayBase;
+        margin: 0 0 2px;
+        font-size: 0;
+        order: -1;
+
+        a {
+            color: $brandPrimary;
+        }
+
+        > span {
+            font-size: $fontSize10;
+            margin-right: 3px;
+        }
+    }
+
+    @media (min-width: $screen_min_600) {
+        flex-direction: row;
+        justify-content: center;
+
+        &__link {
+            margin-right: 10px;
+        }
+
+        &__text {
+            padding: 0 0 3px;
+            margin: 0;
+            font-size: $fontSize10;
+            order: 0;
+        }
+    }
+}

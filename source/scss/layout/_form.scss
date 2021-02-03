@@ -1,0 +1,346 @@
+/* structure for forms
+
+// burn after reading
+
+form.form(action='' method='')
+    .form-group.--has-error
+        label.control-label ФИО
+        input.form-control(type='text' placeholder='ФИО)
+        .help-block
+    .form-group
+        label.control-label Комментарий
+        textarea.form-control(type='text' placeholder='Комментарий')
+        .help-block
+    .form-group
+        label.control-label Город:
+        select.form-control
+            option(value='1') 1
+            option(value='1') 2
+        .help-block
+    .form-group
+        label.control-label Куда доставлять
+        div
+            label на службу
+                input(type='radio' name='radio' checked)
+            label на наш склад
+                input(type='radio' name='radio')
+        .help-block
+    .form-group
+        label
+            input(type='checkbox' checked)
+            | На все согласен(на)
+        .help-block
+    .form-group
+        button.button(type='submit' disabled) submit
+*/
+
+.form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: var(--formGridGap);
+    width: 100%;
+    font-weight: 500;
+    font-size: $fontSizeSmall;
+    line-height: 21px;
+
+    > * {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0 !important;
+    }
+
+    .form-group {
+        display: grid;
+        grid-template-columns: 100%;
+        position: relative;
+
+        &.has-error {
+            .form-control {
+                &:not(button) {
+                    transition: border-color .2s;
+                    border-color: $brandRed;
+                    background-image: url('../images/icons/close.svg');
+                    background-repeat: no-repeat;
+                    background-position: calc(100% - var(--formGridGap)) center;
+                }
+            }
+
+            .help-block {
+                color: $brandRed;
+            }
+        }
+
+        &.has-success {
+            .form-control {
+                &:not(button) {
+                    transition: border-color .2s;
+                    border-color: $brandPrimary;
+                    background-image: url('../images/icons/check.svg');
+                    background-repeat: no-repeat;
+                    background-position: calc(100% - var(--formGridGap)) center;
+                }
+            }
+        }
+    }
+
+    .control-label {
+        margin: 0 0 0 var(--formGridGap);
+    }
+
+    .form-control {
+        &:not(button) {
+            resize: none;
+            width: 100%;
+            height: var(--formControlHeight);
+            border: 1px solid $borderColor;
+            padding: 0 var(--formGridGap);
+            font-weight: 500;
+            font-size: $fontSize16; // 16px is important for iphones
+            color: $grayBase;
+            transition: all .3s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: var(--formBorderRadius);
+
+            &::placeholder {
+                transition: all .3s;
+                color: $gray;
+                font-size: $fontSize16;
+                white-space: nowrap;
+                opacity: 1;
+            }
+
+            &:hover {
+                border-color: rgba(151, 151, 151, 0.32);
+            }
+
+            &:focus {
+                background: rgba(240, 240, 240, 0.24);
+                border-color: rgba(151, 151, 151, 0.32);
+
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .help-block {
+        margin: 0 0 0 var(--formGridGap);
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__section {
+        display: grid;
+        grid-template-columns:
+            repeat(var(--formSectionDivider),
+            calc((1 / var(--formSectionDivider) * 100%) -
+                ((var(--formSectionDivider) - 1) / var(--formSectionDivider) * var(--formGridGap))));
+        grid-gap: var(--formGridGap);
+        align-items: start;
+
+        &.col-2 {
+            --formSectionDivider: 2;
+        }
+
+        &.col-3 {
+            --formSectionDivider: 3;
+        }
+
+        &.col-4 {
+            --formSectionDivider: 4;
+        }
+
+        &.col-stretch {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__radio {
+        font-size: $fontSizeBase;
+        line-height: 24px;
+        color: $textColor;
+
+        > .control-label {
+            color: $textColor;
+            font-weight: 600;
+            font-size: $fontSizeLarge;
+            line-height: 27px;
+            margin: 36px 0 0;
+
+            &:empty {
+                display: none;
+            }
+        }
+
+        > div {
+            display: grid;
+            justify-items: start;
+            grid-gap: var(--formGridGap);
+
+            label {
+                display: grid;
+                grid-template-columns: max-content 1fr;
+                grid-column-gap: 8px;
+                font-weight: 500;
+
+                input {
+                    ~ * {
+                        grid-column-start: 2;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    textarea {
+        &.form-control {
+            padding: 17px 12px;
+            height: 200px;
+        }
+    }
+
+    &__checkboxes {
+        font-size: $fontSizeBase;
+        line-height: 1.5;
+        color: $textColor;
+        display: grid;
+        grid-gap: var(--formGridGap);
+        align-items: start;
+
+        .form-group {
+            justify-content: start;
+        }
+
+        label {
+            display: grid;
+            align-items: center;
+            grid-template-columns: max-content 1fr;
+            grid-column-gap: 8px;
+            font-weight: 500;
+
+            input {
+                ~ * {
+                    grid-column-start: 2;
+                }
+            }
+        }
+    }
+
+    &__buttons {
+        margin: var(--formGridGap) 0 0;
+        display: grid;
+        grid-gap: var(--formGridGap);
+        grid-template-columns: 100%;
+        justify-content: start;
+
+        .form-group {
+            width: 100%;
+        }
+
+        .form-control {
+            font-size: $fontSizeBase;
+            min-height: var(--formControlHeight);
+        }
+
+        &.auto-flow {
+            grid-template-columns: unset;
+            grid-auto-flow: column;
+        }
+    }
+
+    &__note {
+        color: $textColor;
+    }
+
+    &--modal {
+        max-width: 480px;
+        padding: 16px;
+        background: $bodyBg;
+        border-radius: var(--formBorderRadius);
+        border: 1px solid $borderColor;
+
+        .title-h2 {
+            color: $textColor;
+            margin: 0;
+        }
+
+        .form {
+            &__buttons {
+                + span {
+                    text-align: center;
+                    margin: 4px 0 0;
+                }
+            }
+
+            &__checkboxes {
+                margin: 0;
+            }
+        }
+    }
+
+    //== Media queries for column grid
+
+    @media (min-width: $min-s) {
+        &__section {
+            &.col-min-s-2 {
+                --formSectionDivider: 2;
+            }
+
+            &.col-min-s-3 {
+                --formSectionDivider: 3;
+            }
+
+            &.col-min-s-4 {
+                --formSectionDivider: 4;
+            }
+        }
+    }
+
+    @media (min-width: $min-m) {
+        &__section {
+            &.col-min-m-2 {
+                --formSectionDivider: 2;
+            }
+
+            &.col-min-m-3 {
+                --formSectionDivider: 3;
+            }
+
+            &.col-min-m-4 {
+                --formSectionDivider: 4;
+            }
+        }
+    }
+
+    @media (min-width: $min-l) {
+        &__section {
+            &.col-min-l-2 {
+                --formSectionDivider: 2;
+            }
+
+            &.col-min-l-3 {
+                --formSectionDivider: 3;
+            }
+
+            &.col-min-l-4 {
+                --formSectionDivider: 4;
+            }
+        }
+    }
+}
+

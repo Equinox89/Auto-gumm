@@ -1,0 +1,28 @@
+= '\n'
+//= Filters =
+
+.filters#filters
+    .filters__head
+        b
+            a.close-aside(href='javascript:void(0);')
+                +icon('icon-arrow')
+            | Фильтры
+        button.filters__reset(type='reset') Сбросить фильтры
+    each prop in filterListItems
+        .filters__section
+            .filters__title= prop.title
+            .filters__choice
+                if 'limiter' in prop
+                    a.filters__more(href='javascript:void(0);' data-minimize='Свернуть')
+                        span Показати все
+                if 'list' in prop
+                    each el in prop.list
+                        label.filters__choice-item(class= ('disabled' in el) ? 'disabled': '')
+                            input(type='checkbox' checked= ('checked' in el) disabled= ('disabled' in el))
+                            span(data-counter= el.counter)= el.name
+                else
+                    include _range
+    button.button.filters__apply(type='submit') Применить
+
+//= End filters =
+= '\n'

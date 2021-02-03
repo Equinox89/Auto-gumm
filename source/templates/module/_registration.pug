@@ -1,0 +1,37 @@
+= '\n'
+//= Registration =
+
+form.form.form--modal.form--registration.mfp-hide#registration(action='' method='')
+    .title-h2 Регистрация
+    .form__section
+        .form-group
+            label.control-label Имя Фамилия
+            input.form-control(type='text' placeholder='Федоров Владислав')
+            .help-block
+        .form-group
+            label.control-label Номер телефона
+            input.form-control(type='number' placeholder='+ 380 __ __ __ ___')
+            .help-block
+        .form-group
+            label.control-label Пароль
+            input.form-control(type='password' placeholder='********')
+            .help-block
+        .form-group
+            label.control-label Подтверждение пароля
+            input.form-control(type='password' placeholder='********')
+            .help-block
+    .form__checkboxes
+        .form-group
+            label
+                input(type='checkbox' checked)
+                span Я согласен (на) с правилами сайта
+
+    .form__buttons
+        .form-group
+            button.form-control.button.button--blue(type='submit') Реєстрація
+    span У меня уже есть аккаунт&nbsp;
+        a.popup-modal(href='#enter' ) Вход
+
+
+//= End registration =
+= '\n'

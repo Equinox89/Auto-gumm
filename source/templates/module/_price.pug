@@ -1,0 +1,21 @@
+= '\n'
+//= Price =
+
+.price
+    if oldPrice
+        .price__old
+            if prefixInPrice
+                != prefixInPrice
+            span 3182
+            != currInPrice
+    .price__default
+        if prefixInPrice
+            != prefixInPrice
+        span 3182
+        != currInPrice
+
+-
+    oldPrice = false
+
+//= End price =
+= '\n'

@@ -1,0 +1,46 @@
+.sort-filters {
+    position: relative;
+    display: flex;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -4px;
+    }
+
+    &__item {
+        padding: 0 16px;
+        height: 40px;
+        margin: 4px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: $fontSizeBase;
+        font-style: normal;
+        color: $gray;
+        text-decoration: none;
+        border: 1px solid $borderColor;
+        border-radius: 20px;
+        background: transparent;
+        white-space: nowrap;
+        transition: all .2s;
+        cursor: pointer;
+
+        svg {
+            margin: 0 0 0 8px;
+            stroke: $textColor;
+            width: 16px;
+            height: 16px;
+        }
+
+        &.reset {
+            border-color: $brandPrimary;
+            color: $brandPrimary;
+        }
+
+        &:hover {
+            border-color: $brandPrimary;
+            color: $brandPrimary;
+        }
+    }
+}

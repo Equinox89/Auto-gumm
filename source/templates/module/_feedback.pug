@@ -1,0 +1,26 @@
+= '\n'
+//= Feedback =
+
+form.form.form--modal.form--feedback.mfp-hide#feedback(action='' method='')
+    .title-h2 Обратная связь
+    .form__section
+        .form-group
+            label.control-label Имя
+            input.form-control(type='text' placeholder='Федоров Владислав')
+            .help-block
+        .form-group
+            label.control-label Телефон или Email
+            input.form-control(type='number' placeholder='+ 380 __ __ __ ___')
+            .help-block
+    .form__section.form__section--textarea
+        .form-group
+            label.control-label Вопрос
+            textarea.form-control(type='text' placeholder='Вопрос')
+            .help-block
+    .form__buttons
+        .form-group
+            button.form-control.button.button--blue(type='submit') Отправить
+
+
+//= End feedback =
+= '\n'

@@ -1,0 +1,20 @@
+.user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: $fontSizeSmall;
+    line-height: 16px;
+    white-space: nowrap;
+
+    svg {
+        fill: transparent;
+        margin: 0 8px 0 0;
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+}

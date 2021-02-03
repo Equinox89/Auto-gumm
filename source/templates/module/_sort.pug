@@ -1,0 +1,17 @@
+= '\n'
+//= Sort =
+
+.sort
+    span.sort__title Sort:
+    .sort__content
+        .sort__value.call-aside(data-trigger='sort' data-no-overflow)
+            |По возростанию цены
+        span.close-aside
+            +icon('icon-arrow')
+        .sort__drop#sort
+            .sort__list
+                each value, index in sortList
+                    a.sort__list-item(href='javascript:void(0);' class= index === 0 ? 'active': '')= value
+
+//= End sort=
+= '\n'

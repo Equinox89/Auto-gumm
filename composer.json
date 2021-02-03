@@ -1,0 +1,53 @@
+{
+    "name": "layout/basev2.0",
+    "description": "Base layout project v2.0",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Vaskevych",
+            "email": "Vaskevych@ukr.net"
+        },
+        {
+            "name": "Vlad Fedorov",
+            "email": "gkorchun@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "oomphinc/composer-installers-extender": "^1.1",
+        "bower-asset/jquery": "3.3.1",
+        "bower-asset/swiper": "4.5.0",
+        "bower-asset/ion.rangeslider": "2.2.0",
+        "bower-asset/magnific-popup": "1.1.0",
+        "bower-asset/select2": "4.0.5",
+        "bower-asset/stacktable": "1.0.3",
+        "bower-asset/slick-carousel": "1.8.1",
+        "bower-asset/jquery-menu-aim": "dev-master"
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "npm",
+            "bower-asset-library": "bower"
+        },
+        "installer-types": [
+            "bower-asset"
+        ],
+        "installer-paths": {
+            "vendor/{$name}/": [
+                "type:bower-asset"
+            ]
+        }
+    },
+    "config": {
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}

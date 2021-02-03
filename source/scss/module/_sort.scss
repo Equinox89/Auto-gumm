@@ -1,0 +1,112 @@
+.sort {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 500;
+    font-size: $fontSizeBase;
+    padding: 0 0 0 24px;
+    margin: 0 0 0 auto;
+    line-height: 21px;
+    z-index: 10;
+
+    &__title {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        margin: 0 0 8px;
+        color: $borderColor;
+    }
+
+    &__content {
+        position: relative;
+
+        .close-aside {
+            display: flex;
+            margin: 0 0 0 auto;
+            flex-shrink: 0;
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            transition: all .3s;
+
+            svg {
+                fill: transparent;
+                stroke: $brandPrimary;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__value {
+        display: flex;
+        align-items: center;
+        padding: 0 64px 0 12px;
+        border-radius: 3px;
+        color: $gray;
+        border: 1px solid $borderColor;
+        height: 40px;
+        min-width: 140px;
+        background: $bodyBg;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    &__drop {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        min-width: 100%;
+        top: 100%;
+        right: 0;
+        border: 1px solid $borderColor;
+        border-radius: 0 0 3px 3px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        background: $bodyBg;
+
+        &-item {
+            white-space: nowrap;
+            text-decoration: none;
+            color: $gray;
+            font-weight: 500;
+            font-size: $fontSize16;
+            transition: all .3s;
+
+            &.active,
+            &:hover {
+                color: $brandPrimary;
+            }
+
+            &:nth-last-child(n+2) {
+                margin: 0 0 12px;
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_1080) {
+        &__drop {
+            transition: all .3s;
+        }
+
+        &__list {
+            padding: 4px 12px 12px;
+
+            &-item {
+                font-size: $fontSizeBase;
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_1440) {
+        flex-direction: row;
+
+        &__title {
+            margin: 0 8px 0 0;
+        }
+    }
+}

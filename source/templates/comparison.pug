@@ -1,0 +1,42 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'comparison'
+    ionRangeSlider = true
+
+    breadcrumbItems = [{name: 'Главная', link: 'index.html'}]
+
+doctype html
+html
+    include layout/_head
+
+    body.body
+
+        include layout/_header
+
+        = '\n'
+        //= Main =
+
+        main
+            = '\n'
+            //= Layout-box =
+
+            .layout-box.layout-box--aside.container#container
+                include module/_breadcrumb
+                h1 Comparison
+
+                include module/_comparison
+
+        //= End main =
+        = '\n'
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

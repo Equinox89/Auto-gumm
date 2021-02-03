@@ -1,0 +1,20 @@
+= '\n'
+//= Form-photos =
+
+.form-photos.gallery-popup
+    - for (let i = 1; i < 4; i++)
+        .form-photos__item
+            a.form-photos__image(
+                class= i === 1 ?
+                        'video-popup': ''
+                href= i === 1 ?
+                        'https://www.youtube.com/watch?v=i5BnL3a02zo':
+                        `data/reviews/${i}.png`)
+                img(src= i === 1 ?
+                        `data/reviews/${i}.png`:
+                        `data/reviews/${i}.png`, alt='')
+            button.form-photos__remove(type='button')
+                +icon('icon-close')
+
+//= End form-photos =
+= '\n'

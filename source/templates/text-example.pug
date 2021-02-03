@@ -1,0 +1,88 @@
+//- Utility
+
+include utils/_variable
+
+-
+    pageTitle = 'text-example'
+    breadcrumbItems = [{name: 'Главная', link: 'index.html'}]
+
+doctype html
+html
+    include layout/_head
+
+    body.body
+
+        include layout/_header
+
+        = '\n'
+        //= main =
+
+        main
+            .layout-box#container.container
+                include module/_breadcrumb
+                h1 base text example
+                .text
+                    h2 The Big Problem with Personas
+                    p Personas are a useful UX tool for summarizing research data. Designers create these character profiles to humanize their findings and insights for project stakeholders. This is to help guide their decision-making toward meeting user needs.
+                    p But there’s one major problem with personas nobody ever talks about. And it’s wasting your time, keeping you from designing for users, and preventing stakeholders from making correct design decisions. Failing to address this problem could cause your company to lose money.
+                    p The big problem with personas is… nobody uses them.
+                    p If you were to track how many people reference your personas after distributing them to your team, you’ll find very few do. Most will glance over it, mentally appreciate the information, and never pick it up again.
+                    p All that hard work—wasted. This isn’t how you want others to treat your personas.
+
+
+                    h4 Hard to Reference & Unusable
+                    p Your team members need to refer to your personas in discussions to ensure their decisions meet user needs. But most will rarely reference personas throughout the process.
+                    p The problem isn’t with other people or your research data, it’s with how your persona is presented. You were taught that personas are supposed to be a certain way.
+                    p It needs:
+                    ul
+                        li A written bio
+                        li Demographics
+                        li Stock photo
+                        li Personality attributes
+                        li Motivations, Goals, Frustrations, etc.
+
+                    h3 But that way has made your personas hard to reference and unusable.
+
+                    h2 Say No to Wordy Bios
+                    p Here’s an example of a typical persona. It looks informative but the wordy bio overloads it with too much text.
+
+                    p If one were to reference it, they would have to wade through layers of text to pick out the essentials. This is overwhelming to do and time-consuming. Leave wordy bios out of your personas because they turn people off off from using them.
+                    h2 Fictional Users Cause Confusion
+                    p When project stakeholders see a persona for the first time, what questions pop up?
+                    ol
+                        li “Who is this user?”
+                        li “Is he or she real?”
+                        li “Why are we designing for this one user persona?”
+                        li “How can this one user represent a user group?”
+                        li “If the research data is real, why is this user made up?”
+                        li “Why do we need to make up a fictional user?”
+                        li “Huh? I’m so confused!”
+
+                    blockquote
+                        h4 Whether people verbalize
+                        p Whether people verbalize their confusion or not, you still have to go through the trouble of answering these common questions. It’s easy for people to misconstrue the concept of using fictional users when what they’re being presented looks so real.
+                        p Their expectation when viewing fictional users is that the data is also fictional. But in this case, they’re told the data is real but the user is fictional. This confuses them and makes them wonder which bits of information are actually made up. If they have to wonder this, they won’t trust your persona. And if they don’t trust it, they won’t use it.
+                    table
+                        thead
+                            tr
+                                th №
+                                th Column 1
+                                th Column 2
+                                th Column 3
+                        tbody
+                            - for (let i = 0; i < 4; i++)
+                                tr
+                                    td= i + 1
+                                    td= `row ${i + 1}`
+                                    td= `row ${i + 1}`
+                                    td= `row ${i + 1}`
+
+
+        include layout/_footer
+        include module/_mobile-menu
+        include module/_cookies
+
+        #shadow
+
+        include layout/_sprite
+        include layout/_scripts

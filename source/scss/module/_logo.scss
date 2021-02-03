@@ -1,0 +1,15 @@
+.logo {
+    position: relative;
+    width: 100%;
+    max-width: 120px;
+    flex-shrink: 0;
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+    }
+}

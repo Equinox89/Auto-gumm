@@ -1,0 +1,21 @@
+.languages {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    font-size: $fontSizeSmall;
+    grid-gap: 12px;
+
+    a {
+        position: relative;
+        text-transform: uppercase;
+        color: $grayBase;
+        text-decoration: none;
+        transition: all .1s;
+
+        &.active,
+        &:hover {
+            color: $grayBase;
+        }
+    }
+
+}

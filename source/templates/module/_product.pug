@@ -1,0 +1,16 @@
+= '\n'
+//= Product =
+
+article.product
+    a.product__image(href='details.html')
+        img(src=`https://fakeimg.pl/270x190/`, alt='')
+    a.product__name(href='details.html') Диван Benefit 38 / Бенефит 38 Мюнхен
+    .product__options
+        //- options
+    .product__price
+        include _price
+        button.button(type='button')
+            +icon('icon-cart')
+
+//= End product =
+= '\n'

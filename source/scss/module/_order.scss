@@ -1,0 +1,208 @@
+.order {
+    font-weight: 500;
+    background: $base;
+    margin: 0 0 8px;
+    border-radius: 8px;
+    transition: all .3s;
+
+    &__info {
+        border-top: 1px solid $borderColor;
+        min-height: 56px;
+        padding: 16px;
+        display: grid;
+        align-items: start;
+        grid-gap: 16px;
+        grid-template-columns: min-content 1fr 90px;
+        border-bottom: 1px solid transparent;
+
+        &-number {
+            color: $brandPrimary;
+            white-space: nowrap;
+            position: relative;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 18px;
+                height: 18px;
+                fill: transparent;
+                stroke: $brandPrimary;
+                flex-shrink: 0;
+                margin: 0 4px 0 0;
+            }
+
+            span {
+                position: relative;
+                border-bottom: 1px dashed $brandPrimary;
+                transition: all .3s;
+            }
+
+            &:hover {
+                span {
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+
+        &-date {
+            color: $gray;
+            font-weight: normal;
+        }
+
+        &-sum {
+            color: $grayBase;
+            display: none;
+        }
+
+        &-status {
+            text-align: right;
+        }
+    }
+
+    &__drop {
+        padding: 0 16px;
+        display: none;
+    }
+
+    &__delivery {
+        padding: 8px 0;
+        display: flex;
+        align-items: flex-start;
+
+        &-choice {
+            margin: 0 16px 0 0;
+        }
+
+        &-price {
+            color: $brandPrimary;
+            margin: 0 0 0 auto;
+        }
+    }
+
+    &__invoice {
+        display: flex;
+        align-items: flex-end;
+        font-weight: 500;
+        font-size: $fontSizeBase;
+        line-height: 20px;
+        padding: 16px 0;
+        border-top: 1px dashed $borderColor;
+
+        button {
+            background: none;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px dashed;
+            color: $brandPrimary;
+            padding: 0;
+            min-height: 0;
+            font-size: $fontSizeBase;
+            line-height: 24px;
+            white-space: nowrap;
+            transition: all .3s;
+
+            &:hover {
+                border-bottom-color: transparent;
+            }
+        }
+
+        &-sum {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 0 0 0 auto;
+
+            b {
+                font-weight: 500;
+                font-size: $fontSize24;
+                line-height: 1;
+            }
+        }
+    }
+
+    &.delivered {
+        .order {
+            &__info {
+                &-status {
+                    color: $brandPrimary;
+                }
+            }
+        }
+    }
+
+    &.canceled {
+        .order {
+            &__info {
+                &-status {
+                    color: $brandRed;
+                }
+            }
+        }
+    }
+
+    &.processing {
+        .order {
+            &__info {
+                &-status {
+                    color: $brandYellow;
+                }
+            }
+        }
+    }
+
+    &.active {
+        box-shadow: 2px 2px 8px rgba(83, 71, 70, 0.16);
+
+        .order {
+            &__info {
+                border-bottom-color: $borderColor;
+
+                &-number {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_480) {
+        &__invoice {
+            padding: 24px 0 16px;
+
+            &-sum {
+                flex-direction: row;
+
+                b {
+                    margin: 0 0 0 4px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen_min_768) {
+        &__info {
+            grid-template-columns: max-content max-content 1fr 120px;
+
+            &-sum {
+                display: block;
+                text-align: right;
+            }
+
+            &-status {
+                text-align: right;
+            }
+        }
+
+        &__delivery {
+            padding: 12px 0;
+        }
+    }
+
+    @media (min-width: $screen_min_1320) {
+        &__info {
+            grid-template-columns: 192px max-content 1fr 120px;
+        }
+    }
+}

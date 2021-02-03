@@ -1,0 +1,52 @@
+.quantity {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    background: $base;
+    width: 100%;
+    max-width: 180px;
+
+    input {
+        background: transparent;
+        flex-grow: 1;
+        text-align: center;
+        font-size: $fontSizeBase;
+        height: var(--quantityHeight);
+        color: $brandPrimary;
+        border: 1px solid $borderColor;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+    }
+
+    &__button {
+        position: relative;
+        outline: none;
+        flex-shrink: 0;
+        width: var(--quantityHeight);
+        height: var(--quantityHeight);
+        background: transparent;
+        border: 1px solid $borderColor;
+        padding: 0;
+        cursor: pointer;
+
+        &:disabled {
+            opacity: .3;
+        }
+
+        &--minus {
+            border-radius: 4px 0 0 4px;
+            margin: 0 -1px 0 0;
+        }
+
+        &--plus {
+            background: $brandPrimary;
+            border-radius: 0 4px 4px 0;
+            margin: 0 0 0 -1px;
+        }
+    }
+}

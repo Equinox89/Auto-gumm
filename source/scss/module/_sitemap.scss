@@ -1,0 +1,29 @@
+.sitemap {
+    column-count: var(--gridSiteMap);
+    font-size: $fontSizeBase;
+
+    a {
+        text-decoration: none;
+        color: $textColor;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    > li {
+        display: grid;
+        grid-gap: 8px;
+        margin: 0 0 16px;
+        break-inside: avoid;
+
+        > a {
+            font-weight: bold;
+            font-size: $fontSize16;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

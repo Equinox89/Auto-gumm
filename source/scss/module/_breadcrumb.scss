@@ -1,0 +1,55 @@
+.breadcrumb {
+    display: grid;
+    justify-content: start;
+    grid-auto-flow: column;
+    grid-gap: 8px;
+    margin: 0 0 8px;
+    position: relative;
+    overflow: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    font-size: $fontSizeSmall;
+    line-height: 21px;
+    z-index: 20;
+
+    &::-webkit-scrollbar {
+        height: 0;
+    }
+
+    li {
+        position: relative;
+        transition: all .3s;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        grid-gap: 8px;
+        white-space: nowrap;
+        color: $gray;
+
+        &:nth-child(n+2) {
+            &:before {
+                position: relative;
+                content: '';
+                width: 16px;
+                height: 16px;
+                background: url(../images/icons/arrow.svg) no-repeat;
+            }
+        }
+
+        &.active {
+            cursor: default;
+        }
+
+        a {
+            display: flex;
+            cursor: pointer;
+            text-decoration: none;
+            color: $gray;
+            transition: all .2s;
+
+            &:hover {
+                color: $brandPrimary;
+            }
+        }
+    }
+}

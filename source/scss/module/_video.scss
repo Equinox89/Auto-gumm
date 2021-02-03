@@ -1,0 +1,62 @@
+.video {
+    width: 100%;
+    max-width: 720px;
+    margin: 1em 0;
+
+    &__inner {
+        width: 100%;
+        position: relative;
+        height: 0;
+        padding-bottom: calc(100% / 16*9);
+        background-color: $borderColor;
+    }
+
+    &__media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        padding: 0;
+        width: 68px;
+        height: 48px;
+        border: none;
+        background-color: transparent;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+        &-shape {
+            fill: #212121;
+            fill-opacity: 0.8;
+            transition: all .3s;
+        }
+
+        &-icon {
+            fill: #ffffff;
+            transition: all .3s;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            .video {
+                &__button {
+                    &-shape {
+                        fill: #ff0000;
+                        fill-opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

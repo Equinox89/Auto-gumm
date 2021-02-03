@@ -1,0 +1,27 @@
+= '\n'
+//= Modal example =
+
+.example#example
+    form.form(action='' method='')
+        h2 Вход
+        .form__section
+            .form-group
+                label.control-label
+                input.form-control(type='text' placeholder='Имя')
+                .help-block
+            .form-group
+                label.control-label
+                input.form-control(type='text' placeholder='+ 380 __ __ __ ___')
+                .help-block
+            .form-group
+                label.control-label
+                input.form-control(type='password' placeholder='********')
+                .help-block
+        .form__buttons
+            .form-group
+                button.form-control.button(type='submit') Вход
+        a.modal-init(href='#inner-example' data-class='modal--common') modal inner example
+
+
+//= End modal example =
+= '\n'
